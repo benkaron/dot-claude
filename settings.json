@@ -1,5 +1,126 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "DISABLE_BUG_COMMAND": "true",
+    "DISABLE_COST_WARNINGS": "true",
+    "DISABLE_ERROR_REPORTING": "true",
+    "DISABLE_TELEMETRY": "true",
+    "ENABLE_LSP_TOOL": "1"
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(make:*)",
+      "Bash(uv:*)",
+      "Bash(pip:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(pytest:*)",
+      "Bash(cargo:*)",
+      "Bash(npm:*)",
+      "Bash(yarn:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)",
+      "Bash(rg:*)",
+      "Bash(grep:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(sort:*)",
+      "Bash(wc:*)",
+      "Bash(xargs:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(rm:*)",
+      "Bash(chmod:*)",
+      "Bash(du:*)",
+      "Bash(echo:*)",
+      "Bash(command:*)",
+      "Bash(timeout:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(sed:*)",
+      "Bash(awk:*)",
+      "Bash(jq:*)",
+      "Bash(docker:*)",
+      "Bash(psql:*)",
+      "Bash(mysql:*)",
+      "Bash(redis-cli:*)",
+      "Bash(black:*)",
+      "Bash(ruff:*)",
+      "Bash(mypy:*)",
+      "Bash(flake8:*)",
+      "Bash(dbt:*)",
+      "Bash(airflow:*)",
+      "Read(~/.local/**)",
+      "Read(~/.config/**)",
+      "Read(~/Library/**)",
+      "Read(/usr/local/**)",
+      "Read(/opt/**)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:docs.github.com)",
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:platform.claude.com)",
+      "WebFetch(domain:docs.claude.com)",
+      "WebFetch(domain:code.claude.com)",
+      "WebFetch(domain:support.claude.com)",
+      "WebFetch(domain:www.anthropic.com)",
+      "WebFetch(domain:modelcontextprotocol.io)",
+      "WebFetch(domain:pypi.org)",
+      "WebFetch(domain:docs.python.org)",
+      "WebFetch(domain:stackoverflow.com)",
+      "WebFetch(domain:pandas.pydata.org)",
+      "WebFetch(domain:numpy.org)",
+      "WebFetch(domain:scikit-learn.org)",
+      "WebFetch(domain:docs.getdbt.com)",
+      "WebFetch(domain:airflow.apache.org)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./.aws/credentials)",
+      "Read(./.aws/config)",
+      "Read(./.ssh/**)",
+      "Read(./.gitconfig)",
+      "Read(./.netrc)",
+      "Read(./id_rsa*)",
+      "Read(./id_ed25519*)",
+      "Read(./*.pem)",
+      "Read(./*.key)",
+      "Read(./secrets/**)"
+    ],
+    "defaultMode": "default"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/branch_protection.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "gitHandlers": {
+    "diff": {
+      "maxDiffSizeKB": 200
+    }
+  },
+  "enabledPlugins": {
+    "claude-md-management@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true
+  },
+  "alwaysThinkingEnabled": true,
+  "skipDangerousModePermissionPrompt": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754073549692
   }
