@@ -1,0 +1,2 @@
+{"type":"summary","summary":"API Error: 404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-3-5-haiku-20241022\"},\"request_id\":\"req_011CYWrA9wfKTqhWnkH9u889\"}","leafUuid":"4b6d865f-dbbe-42b1-ba01-0fc2932ee3f7"}
+{"type":"summary","summary":"API Error: 404 {\"type\":\"error\",\"error\":{\"type\":\"not_found_error\",\"message\":\"model: claude-3-5-haiku-20241022\"},\"request_id\":\"req_011CYWrAAnmHQy5SQ7S3dkAA\"}","leafUuid":"9eb1c070-57b9-4310-bfec-5a1ca1ccb677"}
