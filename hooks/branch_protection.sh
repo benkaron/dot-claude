@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -euo pipefail
+
+input=$(cat)
+command=$(echo "$input" | jq -r '.tool_input.command // empty' 2>/dev/null || echo "")
+
+# Only check git commit commands
+[[ "$command" =~ ^git[[:space:]]+(commit|add) ]] || { echo "$input"; exit 0; }
+
+# Get current branch
+current_branch=$(git branch --show-current 2>/dev/null || echo "")
+
+# Warn if on protected branch
+if [[ "$current_branch" =~ ^(main|master|production)$ ]]; then
+    echo "⚠️  On protected branch '$current_branch' - consider using a feature branch" >&2
+fi
+
+echo "$input"

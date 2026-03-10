@@ -11,6 +11,17 @@ make lint                # Run linters
 make format              # Format code
 ```
 
+### Neovim Config
+
+```bash
+make -C dotfiles/nvim/.config/nvim lint    # luacheck
+stylua --check dotfiles/nvim/.config/nvim/init.lua  # format check
+```
+
+### CI (GitHub Actions)
+
+Three jobs run on push/PR to main: `format-and-lint-check` (pre-commit), `nvim-lint` (luacheck), `nvim-format` (stylua). Use `ci-monitor` skill after pushing to watch results.
+
 ## Interaction
 
 - Address the user as "Benk" in all interactions
@@ -21,5 +32,26 @@ make format              # Format code
 
 ## Important Details
 
-- User's last name: **Karon** (NOT Karen or Kaaron - always use "Karon")
+- User's last name: **KARON** (NOT Karen or Kaaron - always use "KARON")
 - Cross-check path spellings against environment context at the start of each conversation
+
+## Repository Architecture (when working in ~/.claude/)
+
+This repo is the user's Claude Code configuration — skills, commands, agents, hooks, rules, and dotfiles.
+
+- **`rules/`** — Always-loaded behavioral rules (thinking, workflow, languages, version-control, anti-patterns)
+- **`skills/`** — On-demand reference docs loaded via skill matching. Each has a `SKILL.md`.
+- **`commands/`** — Slash commands (`/commit`, `/review-pull-request`, etc.) as markdown prompt templates
+- **`agents/`** — Custom agent definitions (data-analyzer, sql-optimizer, etc.)
+- **`hooks/`** — Shell scripts triggered by Claude Code events, wired in `settings.json` (branch protection, notifications, etc.)
+- **`dotfiles/`** — GNU Stow packages mirroring `$HOME` structure, managed via `make dotfiles` (requires `stow`). macOS-only packages are skipped on Linux via Makefile.
+- **`settings.json`** — Permissions, hooks config, enabled plugins, environment variables
+- **Python scripts** — Some skills include Python (`skills/data-profiler/profiler.py`, etc.); deps managed via `uv` (`pyproject.toml`)
+
+Key patterns:
+
+- Skills use `SKILL.md` for discovery; reference docs go in `REFERENCE.md`
+- The `dotfiles/` convention: `dotfiles/<pkg>/<path-relative-to-home>` gets symlinked into `~`
+- Machine-local overrides use each tool's native include mechanism (not tracked in repo):
+  - **git**: `[include] path = ~/.config/git/local` — per-machine email, signing, etc.
+  - **zsh**: `~/.local.zsh` (machine paths/tools), `~/.secrets.zsh` (API keys/tokens)
