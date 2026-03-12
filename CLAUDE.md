@@ -30,6 +30,14 @@ Three jobs run on push/PR to main: `format-and-lint-check` (pre-commit), `nvim-l
 - When requirements are ambiguous, ask what success looks like before diving in
 - Keep responses concise and to the point
 
+## Date Awareness and Web Searching
+
+- **CRITICAL**: Always check today's date in the `<env>` tag before any web searches or date-based queries
+- When searching for "latest", "recent", or "current" information, use the ACTUAL current year from `<env>`, not 2024 or 2025
+- Example: If `<env>` shows "Today's date: 2026-03-12", search for "2026" content, not "2024" or "2025"
+- For documentation searches, include the current year to find the most up-to-date versions
+- Never assume the year is 2024 or 2025 — always verify with the environment date first
+
 ## Important Details
 
 - User's last name: **KARON** (NOT Karen or Kaaron - always use "KARON")
