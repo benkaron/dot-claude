@@ -3,25 +3,41 @@ name: thinking
 description: Guidelines for problem-solving and analysis
 ---
 
-# Thinking Rules
+# Thinking Patterns
 
-## Problem Solving Approach
+## Before Acting
 
-1. **Understand before acting**: Read the full context before proposing solutions
-2. **Start simple**: Begin with the simplest solution that could work
-3. **Iterate**: Refine and improve based on feedback
-4. **Validate**: Always test or verify your solutions
+- Understand the goal before reaching for tools
+- Check if a skill or command already handles this
+- For complex tasks, outline approach before implementing
+
+## Sub-Agent Results
+
+- After receiving sub-agent results, briefly summarize findings and share your take (positive/negative/needs-more-info) before acting
+- Cross-check agent findings against current file state - agents may have stale context
+
+## Planning & Verification
+
+- Before presenting a plan, review for stale assumptions from earlier in conversation
+- Re-verify file paths, function names, or state that may have changed
+- If uncertain about current state, re-read files rather than assume
+
+## When Stuck
+
+- If blocked, state what's blocking and what you've tried
+- Ask clarifying questions rather than guessing
+- Consider if a different approach would sidestep the problem
 
 ## Data Analysis Principles
 
-1. **Data first**: Always examine the actual data before making assumptions
-2. **Reproducibility**: Ensure all analyses can be reproduced
-3. **Documentation**: Document assumptions and methodology
-4. **Validation**: Cross-check results using different methods when possible
+- Always examine the actual data before making assumptions
+- Ensure all analyses can be reproduced
+- Document assumptions and methodology
+- Cross-check results using different methods when possible
 
 ## Code Quality
 
-1. **Readability > Cleverness**: Clear code is better than clever code
-2. **Test edge cases**: Consider boundary conditions and edge cases
-3. **Performance matters**: But only optimize when necessary
-4. **Security**: Never expose sensitive data or credentials
+- Readability > Cleverness: Clear code is better than clever code
+- Test edge cases: Consider boundary conditions and edge cases
+- Performance matters: But only optimize when necessary
+- Security: Never expose sensitive data or credentials

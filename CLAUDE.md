@@ -39,11 +39,11 @@ Three jobs run on push/PR to main: `format-and-lint-check` (pre-commit), `nvim-l
 
 This repo is the user's Claude Code configuration — skills, commands, agents, hooks, rules, and dotfiles.
 
-- **`rules/`** — Always-loaded behavioral rules (thinking, workflow, languages, version-control, anti-patterns)
+- **`rules/`** — Always-loaded behavioral rules (thinking, workflow, languages, python, version-control, anti-patterns)
 - **`skills/`** — On-demand reference docs loaded via skill matching. Each has a `SKILL.md`.
-- **`commands/`** — Slash commands (`/commit`, `/review-pull-request`, etc.) as markdown prompt templates
-- **`agents/`** — Custom agent definitions (data-analyzer, sql-optimizer, etc.)
-- **`hooks/`** — Shell scripts triggered by Claude Code events, wired in `settings.json` (branch protection, notifications, etc.)
+- **`commands/`** — Slash commands (`/commit`, `/review-pull-request`, `/implement-issue`, `/deep-research`, etc.) as markdown prompt templates
+- **`agents/`** — Custom agent definitions (code-reviewer, docs-researcher, sql-optimizer, git-commit-surgeon, etc.)
+- **`hooks/`** — Shell scripts triggered by Claude Code events, wired in `settings.json` (branch protection, project context injection, etc.)
 - **`dotfiles/`** — GNU Stow packages mirroring `$HOME` structure, managed via `make dotfiles` (requires `stow`). macOS-only packages are skipped on Linux via Makefile.
 - **`settings.json`** — Permissions, hooks config, enabled plugins, environment variables
 - **Python scripts** — Some skills include Python (`skills/data-profiler/profiler.py`, etc.); deps managed via `uv` (`pyproject.toml`)

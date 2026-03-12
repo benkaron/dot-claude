@@ -108,6 +108,17 @@
           }
         ]
       }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/user-prompt-submit/project-context.sh"
+          }
+        ]
+      }
     ]
   },
   "gitHandlers": {
