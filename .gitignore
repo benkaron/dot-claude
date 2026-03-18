@@ -12,6 +12,7 @@ file-history/
 image-cache/
 paste-cache/
 plans/
+projects/
 session-env/
 shell-snapshots/
 stats-cache.json
