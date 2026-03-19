@@ -2,6 +2,15 @@
 
 Workflow patterns and examples. For flags and options, use `linear-cli <command> --help`.
 
+## ⚠️ IMPORTANT: Avoid These Common Errors
+
+| ❌ WRONG | ✅ CORRECT | Notes |
+|----------|------------|-------|
+| `linear-cli issue create` | `linear-cli create` | No 'issue' subcommand for create |
+| `linear-cli update ID --state "Todo"` | `linear-cli update ID --status "Todo"` | Use --status, not --state |
+| `linear-cli teams list` | `linear-cli teams` | Teams command has no 'list' argument |
+| `linear-cli issue ID --team ENG` | `linear-cli issue ID` | Issue command doesn't take --team |
+
 ## Common Workflows
 
 ### Daily Standup
@@ -15,8 +24,11 @@ linear-cli comments ENG-456
 ### Starting a Task
 
 ```bash
+# Create issue (must specify --team for creation)
 linear-cli create --title "New feature" --team ENG
-# Note the ID from output, then:
+# Note the ID from output (e.g., ENG-789), then:
+
+# Update status (use --status, NOT --state)
 linear-cli update ENG-789 --status "In Progress" --assignee me
 ```
 
