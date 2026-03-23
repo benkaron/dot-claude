@@ -1,3 +1,9 @@
+---
+name: mail-ops-update
+description: Updates Stable's mail processing operations numbers from Gusto exports and deploys to production
+disable-model-invocation: true
+---
+
 # Mail Ops Update Skill
 
 This skill helps update mail processing operations numbers when receiving new Gusto exports, streamlining the weekly update process for Stable's processing centers (NYC and DFW1).
