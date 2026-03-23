@@ -123,17 +123,18 @@
       }
     ]
   },
-  "gitHandlers": {
-    "diff": {
-      "maxDiffSizeKB": 200
-    }
-  },
   "enabledPlugins": {
+    "skill-creator@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true,
+  "gitHandlers": {
+    "diff": {
+      "maxDiffSizeKB": 200
+    }
+  },
   "feedbackSurveyState": {
     "lastShownTime": 1754073549692
   }
