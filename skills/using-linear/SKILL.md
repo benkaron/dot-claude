@@ -1,67 +1,45 @@
 ---
 name: using-linear
-description: Work with Linear issues including creating, updating, and converting tasks to issues. Use when working with Linear, creating Linear issues, updating ticket status, or managing Linear workflow.
-argument-hint: "[create|update|list] [options]"
+description: Query, create, and manage Linear issues from the command line. Use when checking assigned work, viewing issue details, creating new issues, or updating issue status.
 ---
 
-# Using Linear
+# Linear CLI
 
-Manage Linear issues and development workflow.
+Query, create, and update Linear issues without leaving the terminal.
 
-## Quick Operations
-
-```bash
-# List your issues
-linear-cli issue list --mine
-
-# Create issue
-linear-cli issue create --title "Title" --description "Details"
-
-# Update status
-linear-cli issue update TEAM-123 --status "In Progress"
-
-# View issue
-linear-cli issue show TEAM-123
-```
-
-## Workflow Integration
-
-**Start work:**
-```bash
-# View and update issue
-linear-cli issue show TEAM-123
-linear-cli issue update TEAM-123 --status "In Progress"
-
-# Create branch
-git checkout -b feat/TEAM-123-description
-```
-
-**Finish work:**
-```bash
-# Link in PR
-gh pr create --title "feat: [TEAM-123] Title" --body "Implements TEAM-123"
-
-# Mark done
-linear-cli issue update TEAM-123 --status "Done"
-```
-
-## Bulk Operations
+## Quick Examples
 
 ```bash
-# Convert tasks to issues
-for task in "${tasks[@]}"; do
-  linear-cli issue create --title "$task" --estimate 3
-done
+# Check your assigned work
+linear-cli my-work
 
-# Update multiple issues
-linear-cli issue list --team TEAM --status Todo | \
-  xargs -I {} linear-cli issue update {} --priority High
+# View issue details
+linear-cli issue ENG-456
+
+# Create a new issue
+linear-cli create --title "Production bug" --priority 1 --team ENG
+
+# Update status and add comment
+linear-cli update ENG-456 --status "Done"
+linear-cli comment ENG-456 "Shipped in v2.1.0"
 ```
 
-## Branch/Commit Integration
+## Key Flags
 
-**Branch naming:** `feat/TEAM-123-description`
-**Commits:** `feat: [TEAM-123] Add feature`
-**PR titles:** `feat: [TEAM-123] Feature title`
+- `--team ENG` - Specify or filter by team
+- `--status "In Progress"` - Set or filter by status
+- `--priority 1` - Set priority (1-4, 1 is highest)
+- `--assignee name` - Assign to team member
+- `--description` - Add issue description
 
-See REFERENCE.md for templates, bulk operations, and team workflow patterns.
+## More Info
+
+See REFERENCE.md for complete flag documentation, advanced examples, and workflow patterns. Use `linear-cli --help` or `linear-cli <command> --help` for all options.
+
+## Authentication
+
+```bash
+linear-cli login    # OAuth login (stores credentials)
+linear-cli logout   # Clear stored credentials
+linear-cli status   # Verify connection
+```
