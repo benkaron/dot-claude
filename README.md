@@ -69,6 +69,20 @@ launchctl load ~/Library/LaunchAgents/com.claude.notify.plist
 On first notification, macOS will prompt for notification permissions.
 Allow them in **System Settings > Notifications > ClaudeNotify**.
 
+### 4. Conversation history search (glhf)
+
+Search past Claude Code sessions for solutions, commands, and approaches.
+
+```bash
+# Install from source (requires Rust toolchain)
+cargo install --git https://github.com/TrevorS/glhf glhf
+
+# Build the search index (takes a few seconds)
+glhf index
+```
+
+Usage: `glhf search "query" --mode semantic --compact`
+
 ## Day-to-day
 
 ```bash
