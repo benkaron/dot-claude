@@ -8,19 +8,28 @@
 history.jsonl
 backups/
 cache/
+chrome/
+claude_files_*/
+debug/
+downloads/
 file-history/
+ide/
 image-cache/
+mcp-needs-auth-cache.json
+node_modules/
 paste-cache/
 plans/
+plugins/
 projects/
 session-env/
+sessions/
 shell-snapshots/
 stats-cache.json
-telemetry/
 statsig/
+tasks/
+teams/
+telemetry/
 todos/
-debug/
-ide/
 
 # Any local overrides or secrets
 *.local
