@@ -1,6 +1,6 @@
 ---
 name: mail-ops-update
-description: Updates Stable's mail processing operations numbers from Gusto exports and deploys to production
+description: Updates Stable's mail processing operations numbers from Gusto exports and deploys to production. Use when updating ops numbers, processing Gusto exports, deploying mail metrics, or running the weekly ops update.
 disable-model-invocation: true
 ---
 

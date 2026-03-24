@@ -1,6 +1,6 @@
 # Version Control
 
-**AUTO-LOAD**: When the hook output contains `vcs=git`, ALWAYS load the `git-workflow` skill before doing any version control work. This is not optional.
+**AUTO-LOAD**: When the hook output contains `vcs=git`, ALWAYS load the `using-git` skill before doing any version control work. This is not optional.
 
 ## Git Principles
 
