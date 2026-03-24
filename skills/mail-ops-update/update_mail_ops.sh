@@ -73,7 +73,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo "❌ Error loading seeds"
         exit 1
     fi
-    
+
     echo ""
     echo "Rebuilding models..."
     if dbt run --target prod --select +mart_employee_hours+; then

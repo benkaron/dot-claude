@@ -83,6 +83,7 @@ Verify:
 ### 9. Determine Review Action
 
 Check if self-authored:
+
 ```bash
 gh pr view <number> --json author -q '.author.login'
 ```
@@ -102,23 +103,27 @@ gh pr review <number> --comment --body "Feedback"
 ## Review Framework
 
 ### Requirements Alignment
-✓ All acceptance criteria met  
-✓ Edge cases handled  
+
+✓ All acceptance criteria met
+✓ Edge cases handled
 ✓ Error handling robust
 
 ### Code Quality
-✓ Consistent architecture  
-✓ Clear documentation  
+
+✓ Consistent architecture
+✓ Clear documentation
 ✓ Performance considered
 
 ### Testing
-✓ Comprehensive test coverage  
-✓ Failure modes tested  
+
+✓ Comprehensive test coverage
+✓ Failure modes tested
 ✓ Integration verified
 
 ### Security
-✓ Input validation present  
-✓ No credentials exposed  
+
+✓ Input validation present
+✓ No credentials exposed
 ✓ Dependencies reviewed
 
 ## Feedback Template
@@ -127,7 +132,7 @@ gh pr review <number> --comment --body "Feedback"
 ## Review Summary
 
 **Requirements Coverage:** ✅ All acceptance criteria met
-**Code Quality:** ⚠️ Minor improvements suggested  
+**Code Quality:** ⚠️ Minor improvements suggested
 **Testing:** ✅ Comprehensive coverage
 **Documentation:** ✅ Clear and complete
 

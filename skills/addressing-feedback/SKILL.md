@@ -11,18 +11,20 @@ Systematically handle code review feedback.
 ## Quick Workflow
 
 1. **Gather feedback:**
+
 ```bash
 gh pr view <number> --comments
 gh pr diff <number>
 ```
 
-2. **Categorize:**
+1. **Categorize:**
 - 🚨 **Blocking** - Must fix
-- ⚠️ **Important** - Should fix  
+- ⚠️ **Important** - Should fix
 - 💡 **Suggestions** - Consider
 - 💭 **Discussion** - Clarify
 
-3. **Implement & respond:**
+1. **Implement & respond:**
+
 ```bash
 # Fix and commit
 git add . && git commit -m "fix: address review - specific issue"
@@ -34,7 +36,8 @@ gh pr comment <number> --body "Addressed all feedback:
 - ❓ Question about performance - see above"
 ```
 
-4. **Request re-review:**
+1. **Request re-review:**
+
 ```bash
 gh pr review <number> --request
 ```
@@ -53,7 +56,7 @@ gh pr review <number> --request
 # Code complexity
 radon cc file.py  # Measure, then refactor
 
-# DRY violations  
+# DRY violations
 rg -A5 -B5 "pattern"  # Find duplicates, extract shared code
 
 # Test coverage

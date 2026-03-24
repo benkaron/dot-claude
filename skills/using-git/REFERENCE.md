@@ -156,7 +156,7 @@ git push --force-with-lease origin my-feature
 ## Troubleshooting
 
 | Problem | Solution |
-|---------|----------|
+| ------- | -------- |
 | "Rebase failed - repository not clean" | `git stash` first, then rebase, then `git stash pop` |
 | "Nothing to commit" after reset | Wrong number of commits. Try `git log --oneline` to count. |
 | Conflicts during rebase | Edit files, `git add .`, then `git rebase --continue` |

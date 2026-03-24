@@ -36,6 +36,11 @@ todos/
 *.local.md
 settings.local.json
 
+# Python / build
+__pycache__/
+.pytest_cache/
+.venv/
+
 # Any local overrides or secrets
 *.local
 *.secret

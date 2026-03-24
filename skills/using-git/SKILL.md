@@ -15,6 +15,7 @@ git checkout -b feature/description
 ```
 
 For GitHub issue:
+
 ```bash
 gh issue view 42 --json title
 git checkout -b fix/issue-42-brief-description
@@ -23,6 +24,7 @@ git checkout -b fix/issue-42-brief-description
 ## Move Work to Feature Branch
 
 If on main/master with changes:
+
 ```bash
 git stash push -m "Moving to feature"
 git checkout -b feature/name

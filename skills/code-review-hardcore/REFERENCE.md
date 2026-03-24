@@ -5,6 +5,7 @@
 ### 🚨 Critical Issues (Must Fix)
 
 #### Memory & Resources
+
 - [ ] Memory leaks (unreleased resources, circular references)
 - [ ] File handles not closed properly
 - [ ] Database connections not released
@@ -12,6 +13,7 @@
 - [ ] Timers/intervals not cleared
 
 #### Security
+
 - [ ] SQL injection vulnerabilities
 - [ ] XSS attack vectors
 - [ ] Unvalidated user input
@@ -20,6 +22,7 @@
 - [ ] Path traversal vulnerabilities
 
 #### Concurrency
+
 - [ ] Race conditions
 - [ ] Deadlock potential
 - [ ] Improper mutex usage
@@ -29,6 +32,7 @@
 ### ⚠️ Serious Concerns
 
 #### Performance
+
 - [ ] O(n²) or worse algorithms
 - [ ] Unnecessary database queries (N+1 problem)
 - [ ] Missing indexes on queried columns
@@ -37,6 +41,7 @@
 - [ ] Memory-intensive operations
 
 #### Error Handling
+
 - [ ] Silent failures
 - [ ] Missing try-catch blocks
 - [ ] Unhandled promise rejections
@@ -45,6 +50,7 @@
 - [ ] Missing timeout handling
 
 #### Architecture
+
 - [ ] Tight coupling between modules
 - [ ] Circular dependencies
 - [ ] God objects/functions
@@ -54,6 +60,7 @@
 ### 🔧 Code Quality Issues
 
 #### Best Practices
+
 - [ ] Code duplication (DRY violations)
 - [ ] Magic numbers/strings
 - [ ] Inconsistent naming conventions
@@ -62,6 +69,7 @@
 - [ ] Missing documentation
 
 #### Testing
+
 - [ ] No tests for critical paths
 - [ ] Missing edge case coverage
 - [ ] No negative test cases
@@ -69,6 +77,7 @@
 - [ ] Missing mocks for external services
 
 #### Maintainability
+
 - [ ] Functions > 50 lines
 - [ ] Deeply nested code (> 3 levels)
 - [ ] Complex conditionals
@@ -78,6 +87,7 @@
 ## Common Patterns to Flag
 
 ### JavaScript/TypeScript
+
 ```javascript
 // BAD: Memory leak
 componentDidMount() {
@@ -103,6 +113,7 @@ for (const user of users) {
 ```
 
 ### Python
+
 ```python
 # BAD: Mutable default argument
 def process(items=[]):  # Shared between calls!
@@ -122,6 +133,7 @@ except:  # Catches everything including SystemExit
 ```
 
 ### SQL
+
 ```sql
 -- BAD: SQL injection vulnerability
 query = f"SELECT * FROM users WHERE name = '{user_input}'"

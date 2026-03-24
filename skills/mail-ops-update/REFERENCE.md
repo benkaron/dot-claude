@@ -10,17 +10,20 @@
 ## 📋 Manual Steps
 
 ### 1. Export from Gusto
+
 - **URL**: gusto.com
 - **Path**: Reports → Time Tracking → Export CSV
 - **File**: Downloads to `mistro-inc-time-tracking-hours-YYYY-MM-DD.csv`
 
 ### 2. Parse Export
+
 ```bash
 cd ~/sbox/git/stable-analytics-dbt
 python scripts/parse_gusto_export.py
 ```
 
 ### 3. Deploy
+
 ```bash
 dbt seed --target prod && dbt run --target prod --select +mart_employee_hours+
 ```
@@ -28,6 +31,7 @@ dbt seed --target prod && dbt run --target prod --select +mart_employee_hours+
 ## 🔧 Common Scenarios
 
 ### Adding Temp Worker Hours
+
 ```bash
 # Edit the CSV directly
 nano ~/sbox/git/stable-analytics-dbt/seeds/temp_worker_hours.csv
@@ -38,6 +42,7 @@ nano ~/sbox/git/stable-analytics-dbt/seeds/temp_worker_hours.csv
 ```
 
 ### Processing Multiple Weeks
+
 ```bash
 # Download all Gusto exports first, then:
 cd ~/sbox/git/stable-analytics-dbt
@@ -46,6 +51,7 @@ dbt seed --target prod && dbt run --target prod --select +mart_employee_hours+
 ```
 
 ### Fixing Wrong Processing Center
+
 ```bash
 # Edit manual assignments
 nano ~/sbox/git/stable-analytics-dbt/seeds/manual_manager_assignments.csv
@@ -56,6 +62,7 @@ nano ~/sbox/git/stable-analytics-dbt/seeds/manual_manager_assignments.csv
 ```
 
 ### Testing Before Deploy
+
 ```bash
 # Run in your dev schema first
 cd ~/sbox/git/stable-analytics-dbt
@@ -66,6 +73,7 @@ dbt show --select mart_employee_hours --limit 20  # Preview data
 ## 🐛 Troubleshooting
 
 ### "Tailscale not connected"
+
 ```bash
 tailscale up
 # Wait for connection
@@ -73,6 +81,7 @@ tailscale status
 ```
 
 ### "Password authentication failed"
+
 ```bash
 # Set environment variables
 export REDSHIFT_HOST=<your-cluster>.redshift.amazonaws.com
@@ -81,6 +90,7 @@ export REDSHIFT_PASSWORD=<your-password>
 ```
 
 ### "No files found"
+
 ```bash
 # Check Downloads folder
 ls -la ~/Downloads/mistro-inc-*.csv
@@ -90,6 +100,7 @@ python scripts/parse_gusto_export.py ~/Downloads/<exact-filename>.csv
 ```
 
 ### "Model not found" warnings
+
 ```bash
 # These are safe to ignore if seeds and marts run successfully
 # Only marts are used by Metabase
@@ -106,7 +117,7 @@ FROM public.mart_employee_hours
 GROUP BY processing_center;
 
 -- Check total hours by center for latest week
-SELECT 
+SELECT
     processing_center,
     DATE_TRUNC('week', date) as week,
     SUM(total_hours) as total_hours

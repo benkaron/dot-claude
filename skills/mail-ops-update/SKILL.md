@@ -15,12 +15,14 @@ Updates employee hours and mail metrics data from Gusto exports for reporting in
 ## Quick Update Process (5 minutes)
 
 ### 1. Export from Gusto
+
 1. Log into Gusto
 2. Navigate to **Reports → Time Tracking**
 3. Export as CSV (saves as `mistro-inc-time-tracking-hours-YYYY-MM-DD.csv`)
 4. Save to Downloads folder
 
 ### 2. Parse the Export
+
 ```bash
 cd ~/sbox/git/stable-analytics-dbt
 
@@ -36,6 +38,7 @@ This updates:
 - `seeds/gusto_hours_2026_managers.csv` - Employee-manager relationships
 
 ### 3. Add Temp Worker Hours (if applicable)
+
 Edit `seeds/temp_worker_hours.csv` if you have temp worker aggregates:
 
 ```csv
@@ -44,6 +47,7 @@ DFW1_TEMP AGGREGATE,03/15/26,238.09,238.09,0,0,0,Approved,,Temp Worker,Stable DF
 ```
 
 ### 4. Deploy to Production (CRITICAL - WITHOUT THIS, METABASE WON'T UPDATE!)
+
 ```bash
 # Make sure you're on Tailscale VPN!
 
@@ -67,7 +71,7 @@ echo "✅ Mail ops numbers updated successfully!"
 ## Key Tables Updated
 
 - **`mart_employee_hours`** - Daily employee hours by processing center
-- **`mart_employee_fte_hours`** - FTE calculations for capacity planning  
+- **`mart_employee_fte_hours`** - FTE calculations for capacity planning
 - **`mart_mail_metrics`** - Daily mail processing productivity metrics
 
 ## Processing Center Assignment Logic
@@ -82,28 +86,32 @@ Employees are assigned to centers based on their manager:
 Before running updates, ensure:
 
 1. **Tailscale VPN** is connected
-2. **Environment variables** are set:
+1. **Environment variables** are set:
+
 ```bash
 export REDSHIFT_HOST=your-cluster.redshift.amazonaws.com
 export REDSHIFT_USER=your_username
 export REDSHIFT_PASSWORD=your_password
 ```
 
-3. **dbt profile** is configured in `~/.dbt/profiles.yml`
+1. **dbt profile** is configured in `~/.dbt/profiles.yml`
 
 ## Troubleshooting
 
 ### Parse Issues
+
 - **Missing employees**: Check if they're contractors (handled differently)
 - **Wrong processing center**: Update `manual_manager_assignments.csv`
 - **Date format issues**: Ensure Gusto export uses MM/DD/YY format
 
 ### Deployment Issues
+
 - **Connection failed**: Check Tailscale VPN is active
 - **Auth failed**: Verify environment variables are set
 - **Model errors**: Run `dbt debug` to diagnose
 
 ### Quick Verification
+
 After updating, verify in Metabase:
 1. Check the "Processing Center Hours" dashboard
 2. Confirm latest date appears

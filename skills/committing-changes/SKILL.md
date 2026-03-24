@@ -21,6 +21,7 @@ Auto-detect project type (`pyproject.toml`, `package.json`, `Cargo.toml`, `go.mo
 - Stop on failure
 
 **Python:**
+
 ```bash
 black . || ruff format .
 ruff check . || flake8 .
@@ -28,6 +29,7 @@ mypy . || echo "Skipping type checking"
 ```
 
 **JavaScript/TypeScript:**
+
 ```bash
 npm run format || npm run prettier || echo "No formatter"
 npm run lint || echo "No linter"
@@ -35,6 +37,7 @@ npm run typecheck || npm run tsc || echo "No type checking"
 ```
 
 **Makefile:**
+
 ```bash
 make validate || make format lint || echo "No validation target"
 ```
@@ -51,7 +54,7 @@ git diff --stat
 Use **conventional commits** format when appropriate:
 
 - `feat`: new feature
-- `fix`: bug fix  
+- `fix`: bug fix
 - `docs`: documentation changes
 - `style`: formatting, no code change
 - `refactor`: code restructuring
@@ -74,6 +77,7 @@ EOF
 ```
 
 Handle pre-commit hook failures:
+
 ```bash
 # If pre-commit hooks modify files:
 git add -u  # Stage the hook's changes

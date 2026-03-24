@@ -18,6 +18,7 @@ Uncompromising code review that catches issues before they become 3 AM productio
 ## Review Methodology
 
 ### Critical Issues (Production Blockers)
+
 - Memory leaks and resource management
 - Security vulnerabilities
 - Race conditions and deadlocks
@@ -25,6 +26,7 @@ Uncompromising code review that catches issues before they become 3 AM productio
 - Crash-inducing bugs
 
 ### Serious Concerns (Future Pain)
+
 - Performance bottlenecks
 - Scalability issues
 - Technical debt accumulation
@@ -32,6 +34,7 @@ Uncompromising code review that catches issues before they become 3 AM productio
 - Poor observability
 
 ### Code Quality (Professional Standards)
+
 - DRY violations
 - SOLID principle violations
 - Magic numbers

@@ -11,6 +11,7 @@ Initialize comprehensive issue tracking for a project.
 ## Quick Setup
 
 Run setup script:
+
 ```bash
 ~/.claude/skills/setup-github-issues/setup.sh
 ```
@@ -26,7 +27,7 @@ Or manual setup:
 
 Creates:
 - **Type:** feature, bug, chore, docs, refactor
-- **Priority:** critical, high, medium, low  
+- **Priority:** critical, high, medium, low
 - **Status:** blocked, in-progress, review-needed, ready
 - **Effort:** XS, S, M, L, XL
 - **Area:** frontend, backend, database, infrastructure

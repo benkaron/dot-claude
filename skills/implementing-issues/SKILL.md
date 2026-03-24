@@ -14,7 +14,7 @@ End-to-end issue implementation with TDD and proper workflow.
 # GitHub issue
 gh issue view 42 && git checkout -b feat/issue-42-description
 
-# Linear issue  
+# Linear issue
 linear-cli issue show TEAM-123 && git checkout -b feat/TEAM-123-description
 ```
 
@@ -57,7 +57,7 @@ gh pr create --title "feat: implement feature" --assignee @me
 ## Branch Naming
 
 - **GitHub:** `feat/issue-42-description`, `fix/issue-42-bug`
-- **Linear:** `feat/TEAM-123-description`  
+- **Linear:** `feat/TEAM-123-description`
 - **Types:** feat, fix, chore, docs, refactor
 
 See REFERENCE.md for TDD patterns, testing strategies, and issue workflow examples.

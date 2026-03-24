@@ -12,25 +12,27 @@ Comprehensive technical research using multiple sources.
 
 1. **Define scope:** What question needs answering? What decisions depend on this?
 
-2. **Search codebase:**
+1. **Search codebase:**
+
 ```bash
 rg -i "keyword" --type-add 'code:*.{py,js,ts,rs,go}' -t code
 fd README | xargs rg -i "topic"
 ```
 
-3. **Check documentation:**
+1. **Check documentation:**
+
 ```bash
 cat docs/*.md | grep -i "topic"
 cat package.json | jq '.dependencies'  # Check current deps
 ```
 
-4. **Research external sources:**
+1. **Research external sources:**
 - Official framework docs
 - GitHub repositories with similar implementations
 - Recent blog posts (check dates!)
 - Stack Overflow solutions
 
-5. **Synthesize findings:**
+1. **Synthesize findings:**
 
 ```markdown
 # Research: <Topic>
@@ -43,7 +45,7 @@ cat package.json | jq '.dependencies'  # Check current deps
 2. **Industry standard:** <approach> (Used by: <projects>)
 3. **Recommended:** <approach> (Why: <rationale>)
 
-## Evidence & Sources  
+## Evidence & Sources
 - `file.py:123` - Current implementation
 - [Documentation](url) - Key insight
 - [Blog Post](url) - Recent best practices

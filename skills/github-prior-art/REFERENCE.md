@@ -12,6 +12,7 @@ Search GitHub for relevant solutions:
 ### 2. Evaluation Criteria
 
 #### Repository Health
+
 - ⭐ **Stars**: Indicates community adoption
 - 🍴 **Forks**: Shows active usage
 - 🐛 **Issues**: Check open vs closed ratio
@@ -20,6 +21,7 @@ Search GitHub for relevant solutions:
 - 📚 **Documentation**: Quality indicates maturity
 
 #### Code Quality Signals
+
 - Test coverage
 - CI/CD pipelines
 - Code review process
@@ -29,6 +31,7 @@ Search GitHub for relevant solutions:
 ### 3. Search Strategies
 
 #### For Libraries/Tools
+
 ```
 language:javascript stars:>1000 "react hooks"
 language:python stars:>500 "data validation"
@@ -36,6 +39,7 @@ language:rust stars:>100 "async http client"
 ```
 
 #### For Implementation Examples
+
 ```
 filename:README.md "how to" [specific feature]
 path:examples [technology] [use case]
@@ -43,6 +47,7 @@ extension:md "tutorial" [concept]
 ```
 
 #### For Best Practices
+
 ```
 "best practices" [technology] stars:>50
 "style guide" [language] org:google
@@ -54,7 +59,7 @@ extension:md "tutorial" [concept]
 When evaluating multiple solutions:
 
 | Criteria | Option A | Option B | Option C |
-|----------|----------|----------|----------|
+| -------- | -------- | -------- | -------- |
 | Stars | 15k | 8k | 22k |
 | Last Update | 2 days | 1 month | 1 week |
 | Issues | 45/1200 | 120/800 | 30/2000 |
@@ -78,10 +83,12 @@ When evaluating multiple solutions:
 ### 6. Finding Real-World Usage
 
 #### Check Dependents
+
 - GitHub's "Used by" section
 - Look for notable companies/projects
 
 #### Search for Integration Examples
+
 ```
 "import [library]" extension:js
 "from [package] import" extension:py
@@ -89,6 +96,7 @@ When evaluating multiple solutions:
 ```
 
 #### Review Discussions
+
 - GitHub Discussions
 - Stack Overflow questions
 - Reddit threads
@@ -107,7 +115,7 @@ Brief description of what we're trying to solve.
 ### 1. [Library/Approach Name]
 - **GitHub**: [URL]
 - **Stars/Forks**: X stars, Y forks
-- **Pros**: 
+- **Pros**:
   - Battle-tested (used by Company A, B)
   - Great documentation
   - Active community
@@ -151,26 +159,31 @@ From GitHub issues and discussions:
 ## Quick Search Recipes
 
 ### Find the most popular solution
+
 ```
 [problem] language:[lang] sort:stars
 ```
 
 ### Find recent discussions
+
 ```
 [technology] [problem] created:>2024-01-01 type:issue
 ```
 
 ### Find enterprise-grade solutions
+
 ```
 org:google OR org:facebook OR org:microsoft [technology]
 ```
 
 ### Find tutorials and guides
+
 ```
 "step by step" OR tutorial OR guide [technology] in:readme stars:>50
 ```
 
 ### Find common pitfalls
+
 ```
 "gotcha" OR "warning" OR "don't" [technology] in:readme,issues
 ```

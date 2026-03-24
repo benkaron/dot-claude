@@ -11,7 +11,7 @@ Transform specs → requirements → tasks → tickets.
 ## Spec to Requirements
 
 1. **Read spec** for goals, constraints, scope
-2. **Extract requirements:**
+1. **Extract requirements:**
 
 ```markdown
 ## FR1: Feature Name
@@ -21,14 +21,15 @@ Transform specs → requirements → tasks → tickets.
 - Effort: XS/S/M/L/XL
 ```
 
-3. **Document:**
+1. **Document:**
+
 ```markdown
 # Requirements
 
 ## Functional
 [List with IDs, acceptance criteria]
 
-## Non-Functional  
+## Non-Functional
 [Performance, security, scalability]
 
 ## Out of Scope

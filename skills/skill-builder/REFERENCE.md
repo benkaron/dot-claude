@@ -43,6 +43,7 @@ Brief explanation of what this skill provides.
 ## Writing Effective Descriptions
 
 ### Good Description
+
 ```yaml
 description: Search GitHub for proven solutions, popular libraries, and real-world examples before implementing. Auto-load when asked "how do I", "what's the best way", "which library", or any implementation question.
 ```
@@ -54,6 +55,7 @@ description: Search GitHub for proven solutions, popular libraries, and real-wor
 - Clear use case
 
 ### Bad Description
+
 ```yaml
 description: Helps with GitHub stuff
 ```
@@ -67,12 +69,14 @@ description: Helps with GitHub stuff
 ## Trigger Phrase Best Practices
 
 ### Effective Triggers
+
 - Match natural language patterns
 - Cover variations users might say
 - Include both specific and general phrases
 - Test with real queries
 
 ### Examples
+
 ```yaml
 # Code review skill
 - "review this code"
@@ -92,6 +96,7 @@ description: Helps with GitHub stuff
 ## Skill Categories
 
 ### Workflow Skills
+
 Automate common development workflows
 - Git operations
 - CI/CD pipelines
@@ -99,6 +104,7 @@ Automate common development workflows
 - Code review
 
 ### Knowledge Skills
+
 Provide domain expertise
 - Framework best practices
 - Language patterns
@@ -106,6 +112,7 @@ Provide domain expertise
 - Security standards
 
 ### Tool Skills
+
 Integrate with specific tools
 - Database queries
 - API interactions
@@ -113,6 +120,7 @@ Integrate with specific tools
 - Service configurations
 
 ### Project Skills
+
 Project-specific conventions
 - Coding standards
 - Testing patterns
@@ -122,18 +130,21 @@ Project-specific conventions
 ## Skill Testing Checklist
 
 ### Discovery Testing
+
 - [ ] Ask questions using trigger phrases
 - [ ] Verify skill loads automatically
 - [ ] Check description appears in search
 - [ ] Test edge cases and variations
 
 ### Content Testing
+
 - [ ] Information is accurate
 - [ ] Examples work correctly
 - [ ] Commands are valid
 - [ ] References are current
 
 ### User Experience
+
 - [ ] Clear when to use
 - [ ] Progressive disclosure works
 - [ ] No information overload
@@ -142,6 +153,7 @@ Project-specific conventions
 ## Common Patterns
 
 ### Command Reference Skill
+
 ```markdown
 ---
 name: docker-commands
@@ -160,6 +172,7 @@ Quick reference for common Docker operations.
 ```
 
 ### Integration Skill
+
 ```markdown
 ---
 name: api-integration
@@ -178,6 +191,7 @@ Guidelines and patterns for working with our API.
 ```
 
 ### Debugging Skill
+
 ```markdown
 ---
 name: performance-profiling
@@ -198,18 +212,21 @@ Tools and techniques for finding performance bottlenecks.
 ## Skill Migration Guide
 
 ### From Commands to Skills
+
 Commands are one-shot prompts. Convert to skills when:
 - Information is reusable
 - Multiple related topics
 - Need progressive disclosure
 
 ### From Rules to Skills
+
 Rules are always loaded. Convert to skills when:
 - Only needed occasionally
 - Specific to certain workflows
 - Too detailed for rules
 
 ### From Inline Knowledge to Skills
+
 Extract to skills when:
 - Repeatedly providing same information
 - Knowledge has structure
@@ -218,6 +235,7 @@ Extract to skills when:
 ## Skill Validation
 
 ### Run this check:
+
 ```bash
 # Verify skill structure
 ls -la skills/*/
@@ -231,6 +249,7 @@ grep -h "Auto-Load Triggers" skills/*/SKILL.md -A 5
 ```
 
 ### Quality Metrics
+
 - **Discoverability**: Can users find it?
 - **Activation**: Does it load when needed?
 - **Usefulness**: Does it solve real problems?
@@ -240,18 +259,21 @@ grep -h "Auto-Load Triggers" skills/*/SKILL.md -A 5
 ## Examples of Great Skills
 
 ### 1. Git Workflow (Process Automation)
+
 - Clear workflow steps
 - Common variations covered
 - Troubleshooting included
 - Command references
 
 ### 2. API Documentation (Knowledge Base)
+
 - Authentication details
 - Endpoint references
 - Example requests
 - Error handling
 
 ### 3. Testing Patterns (Best Practices)
+
 - Framework-specific guidance
 - Example test cases
 - Mocking strategies
@@ -271,6 +293,7 @@ grep -h "Auto-Load Triggers" skills/*/SKILL.md -A 5
    - Plan content
 
 3. **Create Files**
+
    ```bash
    mkdir -p skills/new-skill
    touch skills/new-skill/SKILL.md

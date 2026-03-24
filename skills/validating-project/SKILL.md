@@ -18,21 +18,25 @@ make validate || make lint test || ~/.claude/skills/validating-project/validate.
 ## By Project Type
 
 **Python:**
+
 ```bash
 ruff format . && ruff check . && mypy . && pytest
 ```
 
-**JavaScript/TypeScript:**  
+**JavaScript/TypeScript:**
+
 ```bash
 npm run lint && npm run typecheck && npm test
 ```
 
 **Rust:**
+
 ```bash
 cargo fmt && cargo clippy && cargo test
 ```
 
 **Go:**
+
 ```bash
 go fmt ./... && go vet ./... && go test ./...
 ```
@@ -42,7 +46,7 @@ go fmt ./... && go vet ./... && go test ./...
 ```
 🔍 Project Validation
 📝 Format    ✅ Passed
-🔎 Lint      ⚠️ 3 warnings  
+🔎 Lint      ⚠️ 3 warnings
 🔤 Types     ✅ Passed
 🧪 Tests     ❌ 2 failed
 

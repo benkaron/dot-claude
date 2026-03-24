@@ -40,7 +40,7 @@
 ## Priority Matrix
 
 | Priority | Urgency | Importance | Example |
-|----------|---------|------------|---------|
+| -------- | ------- | ---------- | ------- |
 | P0 | Urgent | Critical | Production down |
 | P1 | Not Urgent | Critical | Core feature |
 | P2 | Urgent | Important | Customer request |
@@ -51,7 +51,7 @@
 ## Effort Sizing Guide
 
 | Size | Hours | Days | Guidance |
-|------|-------|------|----------|
+| ---- | ----- | ---- | -------- |
 | XS | <2 | 0.25 | Simple change, no testing |
 | S | 2-4 | 0.5 | Small feature, basic testing |
 | M | 4-8 | 1 | Standard feature with tests |
@@ -71,14 +71,14 @@ import yaml
 def parse_spec(spec_file):
     with open(spec_file) as f:
         content = f.read()
-    
+
     # Extract sections
     functional = re.findall(r'## Functional.*?\n(.*?)(?=##|\Z)', content, re.DOTALL)
     nonfunctional = re.findall(r'## Non-Functional.*?\n(.*?)(?=##|\Z)', content, re.DOTALL)
-    
+
     requirements = []
     req_id = 1
-    
+
     for section in functional:
         for line in section.split('\n'):
             if line.strip().startswith('-'):
@@ -90,7 +90,7 @@ def parse_spec(spec_file):
                     'effort': 'M'
                 })
                 req_id += 1
-    
+
     return requirements
 
 # Usage
@@ -113,7 +113,7 @@ for task in $tasks; do
     body=$(echo "$task" | yq eval '.description' -)
     labels=$(echo "$task" | yq eval '.labels | join(",")' -)
     milestone=$(echo "$task" | yq eval '.sprint' -)
-    
+
     gh issue create \
         --title "$title" \
         --body "$body" \
@@ -130,7 +130,7 @@ def generate_sprint_plan(tasks, velocity=40):
     """Generate sprints based on team velocity"""
     sprints = []
     current_sprint = {'tasks': [], 'hours': 0}
-    
+
     for task in sorted(tasks, key=lambda x: x['priority']):
         if current_sprint['hours'] + task['hours'] <= velocity:
             current_sprint['tasks'].append(task)
@@ -138,10 +138,10 @@ def generate_sprint_plan(tasks, velocity=40):
         else:
             sprints.append(current_sprint)
             current_sprint = {'tasks': [task], 'hours': task['hours']}
-    
+
     if current_sprint['tasks']:
         sprints.append(current_sprint)
-    
+
     return sprints
 ```
 
@@ -233,6 +233,7 @@ Total: 32h (4 days)
 ## Tips
 
 ### Requirements Writing
+
 - Use "shall" for mandatory requirements
 - Use "should" for recommended features
 - Use "may" for optional features
@@ -241,6 +242,7 @@ Total: 32h (4 days)
 - Avoid implementation details
 
 ### Task Estimation
+
 - Include all activities (code, test, review, deploy)
 - Add 20% buffer for unknowns
 - Consider dependencies
@@ -248,6 +250,7 @@ Total: 32h (4 days)
 - Break down anything over 2 days
 
 ### Sprint Planning
+
 - Keep 20% capacity for bugs/support
 - Balance frontend/backend work
 - Consider team skills and availability

@@ -11,12 +11,12 @@
 
 These skills should be loaded automatically when context is detected:
 
-| Context                    | Skill                     | Trigger                           |
-| -------------------------- | ------------------------- | --------------------------------- |
-| `vcs=git` in hook output   | `using-git`               | Every prompt in git repos         |
-| `ci=github-actions` in hook | `ci-monitor`             | After push, monitor CI runs       |
-| Working in `~/.claude/`   | `maintaining-claude-code` | When modifying skills/rules/hooks |
-| SQL queries in conversation | `sql-optimizer`          | When writing or reviewing SQL     |
+| Context                     | Skill                     | Trigger                           |
+| --------------------------- | ------------------------- | --------------------------------- |
+| `vcs=git` in hook output    | `using-git`               | Every prompt in git repos         |
+| `ci=github-actions` in hook | `ci-monitor`              | After push, monitor CI runs       |
+| Working in `~/.claude/`     | `maintaining-claude-code` | When modifying skills/rules/hooks |
+| SQL queries in conversation | `sql-optimizer`           | When writing or reviewing SQL     |
 
 ## Agent Delegation
 
