@@ -33,12 +33,10 @@ mkdir -p ~/Applications
 cp -r .build/release/ClaudeNotify.app ~/Applications/claude-notify.app
 codesign --force --deep --sign - ~/Applications/claude-notify.app
 
-# Auto-start on login
-cp com.claude.notify.plist ~/Library/LaunchAgents/
+# Auto-start on login (fix path in plist first)
+sed "s|/Applications/ClaudeNotify.app|$HOME/Applications/claude-notify.app|" \
+  com.claude.notify.plist > ~/Library/LaunchAgents/com.claude.notify.plist
 launchctl load ~/Library/LaunchAgents/com.claude.notify.plist
-
-# Start now
-open ~/Applications/claude-notify.app
 ```
 
 On first notification, macOS will prompt for notification permissions.
