@@ -155,6 +155,7 @@
     "code-simplifier@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
   "gitHandlers": {
     "diff": {
