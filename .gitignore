@@ -32,6 +32,10 @@ teams/
 telemetry/
 todos/
 
+# Local Claude settings
+*.local.md
+settings.local.json
+
 # Any local overrides or secrets
 *.local
 *.secret
