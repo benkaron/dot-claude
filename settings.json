@@ -100,6 +100,17 @@
     "defaultMode": "default"
   },
   "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/claude-notify.sh"
+          }
+        ]
+      }
+    ],
     "PreToolUse": [
       {
         "matcher": "Bash",
@@ -107,6 +118,17 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/branch_protection.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/claude-notify.sh"
           }
         ]
       }
@@ -122,6 +144,10 @@
         ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/hooks/status.sh"
   },
   "enabledPlugins": {
     "skill-creator@claude-plugins-official": true,
