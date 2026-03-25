@@ -23,7 +23,9 @@ argument-hint: "<search-query>"
 
 Search your Claude Code conversation history using hybrid search (text + semantic).
 
-When invoked as `/glhf <query>`, run: `glhf search "$ARGUMENTS" --mode semantic --compact`
+Invoke as `/searching-history <query>` to run: `glhf search "$ARGUMENTS" --mode semantic --compact`
+
+To run glhf directly from the terminal: `glhf search "query" --mode semantic --compact`
 
 ## Quick Examples
 
