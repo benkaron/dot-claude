@@ -19,6 +19,8 @@ Manage tasks and projects in TickTick without leaving the terminal. The MCP is c
 
 These actions modify the user's real task list and cannot be easily undone. Show what you're about to do and wait for a "yes" before executing. Reading/querying is always safe.
 
+**Timezone**: Default to **Eastern Time (America/New_York)** for all task dates and reminders. If the user needs a different timezone, ask — but assume ET unless told otherwise.
+
 ## Querying Tasks
 
 ```
