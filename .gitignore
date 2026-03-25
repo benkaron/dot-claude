@@ -20,6 +20,7 @@ node_modules/
 paste-cache/
 plans/
 plugins/
+!dotfiles/**/plugins/
 remote-settings.json
 projects/
 session-env/

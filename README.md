@@ -36,7 +36,21 @@ cd ~/.claude
 make install    # uv sync + pre-commit install + stow dotfiles
 ```
 
-### 2. Shell setup
+### 2. Font (Ioskeley Mono)
+
+[Ioskeley Mono](https://github.com/ahatem/IoskeleyMono) — an Iosevka config that mimics Berkeley Mono (SIL Open Font License).
+
+```bash
+# Download latest release and install
+cd /tmp
+curl -LO https://github.com/ahatem/IoskeleyMono/releases/latest/download/IoskeleyMono-Normal.zip
+unzip IoskeleyMono-Normal.zip -d IoskeleyMono
+cp IoskeleyMono/*.ttf ~/Library/Fonts/
+```
+
+The Ghostty config references `Ioskeley Mono` — install the font before launching.
+
+### 3. Shell setup
 
 Add to `~/.zshrc`:
 
@@ -44,7 +58,7 @@ Add to `~/.zshrc`:
 eval "$(starship init zsh)"
 ```
 
-### 3. Desktop notifications (claude-notify)
+### 4. Desktop notifications (claude-notify)
 
 Native macOS notifications with click-to-focus. Required for the Notification and Stop hooks.
 
@@ -69,7 +83,7 @@ launchctl load ~/Library/LaunchAgents/com.claude.notify.plist
 On first notification, macOS will prompt for notification permissions.
 Allow them in **System Settings > Notifications > ClaudeNotify**.
 
-### 4. Conversation history search (glhf)
+### 5. Conversation history search (glhf)
 
 Search past Claude Code sessions for solutions, commands, and approaches.
 
