@@ -7,6 +7,18 @@ description: Manage tasks, projects, and lists in TickTick via MCP. Use when cre
 
 Manage tasks and projects in TickTick without leaving the terminal. The MCP is configured globally — available in all sessions.
 
+## CRITICAL: Confirmation Required
+
+**ALWAYS ask the user for explicit confirmation before:**
+
+- Creating tasks (`create_task`, `batch_add_tasks`)
+- Completing tasks (`complete_task`, `complete_tasks_in_project`)
+- Updating tasks (`update_task`, `batch_update_tasks`)
+- Moving tasks (`move_task`)
+- Creating or updating projects (`create_project`, `update_project`)
+
+These actions modify the user's real task list and cannot be easily undone. Show what you're about to do and wait for a "yes" before executing. Reading/querying is always safe.
+
 ## Querying Tasks
 
 ```
@@ -56,13 +68,32 @@ get_user_preference    # timezone and settings
 
 ## Airbnb Guest Reminders
 
-When asked to add Airbnb tasks/reminders, **always run the script directly** — do NOT create these tasks via the MCP. The script is interactive (it prompts for input), so just run it via Bash and the user will interact with the prompts:
+When asked to add Airbnb tasks/reminders, **always use the script** — do NOT create these tasks via the MCP.
+
+The script supports CLI arguments (for use from Claude) and interactive mode (for manual use):
 
 ```bash
-python3 ~/projects/airbnb-ticktick/main.py
+# CLI mode — ask the user for guest details first, then run:
+python3 ~/projects/airbnb-ticktick/main.py \
+  --name "Guest Name" \
+  --checkin MM/DD/YYYY \
+  --checkout MM/DD/YYYY \
+  --yes
+
+# With custom check-in/checkout times:
+python3 ~/projects/airbnb-ticktick/main.py \
+  --name "Guest Name" \
+  --checkin MM/DD/YYYY \
+  --checkout MM/DD/YYYY \
+  --checkin-time "2 PM" \
+  --checkout-time "12 PM" \
+  --yes
+
+# Interactive mode (user runs manually):
+# ! python3 ~/projects/airbnb-ticktick/main.py
 ```
 
-Do NOT tell the user to run it themselves. Just execute it. The user will answer the prompts (guest name, check-in/checkout dates, early/late options).
+**Workflow**: Ask the user for guest name, check-in date, checkout date, and whether they have early check-in or late checkout. Then run the script with `--yes` to skip the confirmation prompt.
 
 The script creates 5 timed reminder tasks with pre-filled message templates:
 
