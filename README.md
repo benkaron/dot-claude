@@ -23,7 +23,7 @@ Everything I need on a new machine — Claude Code configuration, terminal dotfi
 | `hooks/` | Shell scripts triggered by Claude Code events |
 | `agents/` | Custom agent definitions |
 | `rules/` | Always-loaded behavioral rules |
-| `dotfiles/` | GNU Stow packages: ghostty, nvim, starship |
+| `dotfiles/` | GNU Stow packages: ghostty, nvim, starship, zsh |
 | `settings.json` | Permissions, hooks config, plugins, env vars |
 
 ## Setup on a new machine
@@ -50,12 +50,21 @@ cp IoskeleyMono/*.ttf ~/Library/Fonts/
 
 The Ghostty config references `Ioskeley Mono` — install the font before launching.
 
-### 3. Shell setup
+### 3. Machine-local shell config
 
-Add to `~/.zshrc`:
+`make install` stows a shared `.zshrc` that sources two optional local files (not tracked in git):
+
+- **`~/.local.zsh`** — machine-specific paths and tools (conda, homebrew, etc.)
+- **`~/.secrets.zsh`** — API keys and tokens
+
+Create `~/.local.zsh` for anything that varies per machine:
 
 ```bash
-eval "$(starship init zsh)"
+# Example: conda setup, custom PATH entries, etc.
+cat > ~/.local.zsh << 'EOF'
+# Machine-local config (not tracked in git)
+# Add conda init block, custom PATHs, etc. here
+EOF
 ```
 
 ### 4. Desktop notifications (claude-notify)
