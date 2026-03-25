@@ -56,13 +56,15 @@ get_user_preference    # timezone and settings
 
 ## Airbnb Guest Reminders
 
-When asked to add Airbnb tasks/reminders, **always use the script** at `~/projects/airbnb-ticktick/main.py`. Do NOT create these tasks via the MCP directly.
+When asked to add Airbnb tasks/reminders, **always run the script directly** — do NOT create these tasks via the MCP. The script is interactive (it prompts for input), so just run it via Bash and the user will interact with the prompts:
 
 ```bash
 python3 ~/projects/airbnb-ticktick/main.py
 ```
 
-The script is interactive — it prompts for guest name, check-in/checkout dates, and early/late options. It creates 5 timed reminder tasks with pre-filled message templates:
+Do NOT tell the user to run it themselves. Just execute it. The user will answer the prompts (guest name, check-in/checkout dates, early/late options).
+
+The script creates 5 timed reminder tasks with pre-filled message templates:
 
 1. Car info request (4 days before check-in, 10 AM ET)
 2. Check-in instructions (1 day before, 10 AM ET)
