@@ -15,9 +15,9 @@ linear-cli comments ENG-456
 ### Starting a Task
 
 ```bash
-linear-cli create --title "New feature" --team ENG
+linear-cli create --title "New feature" --team ENG --assignee "me"
 # Note the ID from output, then:
-linear-cli update ENG-789 --status "In Progress" --assignee me
+linear-cli update ENG-789 --status "In Progress"
 ```
 
 ### Closing Work

@@ -16,8 +16,8 @@ linear-cli my-work
 # View issue details
 linear-cli issue ENG-456
 
-# Create a new issue
-linear-cli create --title "Production bug" --priority 1 --team ENG
+# Create a new issue (always assigns to me)
+linear-cli create --title "Production bug" --team ENG --assignee "me"
 
 # Update status and add comment
 linear-cli update ENG-456 --status "Done"
@@ -28,9 +28,13 @@ linear-cli comment ENG-456 "Shipped in v2.1.0"
 
 - `--team ENG` - Specify or filter by team
 - `--status "In Progress"` - Set or filter by status
-- `--priority 1` - Set priority (1-4, 1 is highest)
-- `--assignee name` - Assign to team member
+- `--assignee "me"` - Assign to yourself (MUST use the literal string `"me"`, not a name or email)
 - `--description` - Add issue description
+
+## Hands-Off by Default
+
+- **Always** set `--assignee "me"` on create unless told otherwise
+- **Never** set `--priority` or `--label` unless the user explicitly asks — these are managed by the team's workflow
 
 ## More Info
 
