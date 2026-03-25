@@ -95,7 +95,13 @@ python3 ~/projects/airbnb-ticktick/main.py \
 
 **Workflow**: Ask the user for guest name, check-in date, checkout date, and whether they have early check-in or late checkout. Then run the script with `--yes` to skip the confirmation prompt.
 
-The script creates 5 timed reminder tasks with pre-filled message templates:
+**Defaults (all times Eastern):**
+- Check-in time: **4 PM ET** (only pass `--checkin-time` if the guest has early check-in)
+- Checkout time: **10 AM ET** (only pass `--checkout-time` if the guest has late checkout)
+
+When confirming with the user, show: guest name, dates, and whether times are default or custom. Always specify "ET" for times.
+
+The script creates 5 timed reminder tasks (all Eastern Time) with pre-filled message templates:
 
 1. Car info request (4 days before check-in, 10 AM ET)
 2. Check-in instructions (1 day before, 10 AM ET)
