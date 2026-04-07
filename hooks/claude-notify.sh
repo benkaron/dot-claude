@@ -7,9 +7,11 @@ BINARY="$HOME/Applications/claude-notify.app/Contents/MacOS/ClaudeNotify"
 test -x "$BINARY" || exit 0
 
 input=""
-while IFS= read -r -t 5 line; do
+while IFS= read -r -t 2 line; do
   input="${input}${line}"
 done
 message=$(echo "$input" | jq -r '.message // "Claude Code needs your attention"' 2>/dev/null)
 
-exec "$BINARY" -m "$message" -a "com.mitchellh.ghostty"
+"$BINARY" -m "$message" -a "com.mitchellh.ghostty" &
+disown
+exit 0
