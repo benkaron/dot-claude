@@ -10,5 +10,8 @@
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+# lazysql — use XDG config path (cross-platform)
+alias lazysql='lazysql -config ~/.config/lazysql/config.toml'
+
 # Starship prompt
 eval "$(starship init zsh)"

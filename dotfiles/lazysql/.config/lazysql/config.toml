@@ -1,0 +1,23 @@
+ConfigFile = '/Users/benkaron/.config/lazysql/config.toml'
+
+[application]
+DefaultPageSize = 300
+DisableSidebar = false
+SidebarOverlay = false
+MaxQueryHistoryPerConnection = 100
+TreeWidth = 30
+JSONViewerWordWrap = false
+
+[[database]]
+Name = 'redshift-readonly'
+URL = 'postgres://ben_readonly:3g8njnNqUyBDRWiWnnHA@redshift-prod.c82rkc1o99nm.us-west-2.redshift.amazonaws.com:5439/stable'
+Provider = 'postgres'
+Username = ''
+Password = ''
+Hostname = ''
+Port = ''
+DBName = 'stable'
+URLParams = ''
+ReadOnly = true
+Schemas = []
+Commands = []
