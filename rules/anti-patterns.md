@@ -15,6 +15,11 @@
 - Do not create abstractions for one-time operations
 - Do not add backwards-compatibility hacks
 
+## Attribution
+
+- Never add "Generated with Claude Code", "Co-authored-by", or any AI attribution to commits, PRs, or code
+- The user's work is the user's work — do not take or share credit
+
 ## Planning
 
 - Do not reference stale context in plans
