@@ -20,10 +20,6 @@ make -C dotfiles/nvim/.config/nvim lint    # luacheck
 stylua --check dotfiles/nvim/.config/nvim/init.lua  # format check
 ```
 
-### CI (GitHub Actions)
-
-Three jobs run on push/PR to main: `format-and-lint-check` (pre-commit), `nvim-lint` (luacheck), `nvim-format` (stylua). Use `ci-monitor` skill after pushing to watch results.
-
 ## Interaction
 
 - Address the user as "Benk" in all interactions
